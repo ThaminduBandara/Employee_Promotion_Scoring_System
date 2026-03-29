@@ -12,11 +12,11 @@ def predict_employee(payload: dict) -> dict:
     df = pd.DataFrame([payload])
 
     prob = float(pipeline.predict_proba(df)[0][1])
-    threshold = 0.375
+    threshold = 0.5
     pred = int(prob >= threshold)
     score = round(prob * 10, 2)
 
-    if prob >= 0.6:
+    if prob >= 0.7:
         recommendation = "High promotion potential"
     elif prob >= threshold:
         recommendation = "Moderate promotion potential"

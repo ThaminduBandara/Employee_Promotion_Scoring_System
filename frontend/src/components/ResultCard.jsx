@@ -13,19 +13,10 @@ function ResultCard({ result }) {
     return JSON.stringify(value);
   };
 
-  const isPromoted = Number(result.prediction) === 1;
-
   return (
     <section className="mt-7 animate-[fadeIn_0.4s_ease-out] rounded-2xl border border-slate-200 bg-slate-900 p-5 text-slate-100 shadow-xl shadow-slate-300/60 sm:p-6">
       <div className="mb-4 flex flex-wrap items-center gap-3">
         <h2 className="font-[Fraunces] text-2xl">Prediction Result</h2>
-        <span
-          className={`rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide ${
-            isPromoted ? "bg-emerald-300 text-emerald-900" : "bg-amber-300 text-amber-900"
-          }`}
-        >
-          {isPromoted ? "Promoted" : "Not Promoted"}
-        </span>
       </div>
 
       <div className="grid gap-3 text-sm sm:grid-cols-2">
